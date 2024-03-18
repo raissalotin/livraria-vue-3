@@ -30,7 +30,7 @@ function editar(autor_para_editar) {
 }
 
 async function excluir(id) {
-  await autorsApi.excluirEditora(id);
+  await autorsApi.excluirAutor(id);
   autors.value = await autorsApi.buscarTodosOsAutors();
   limpar();
 }
@@ -41,7 +41,7 @@ async function excluir(id) {
   <hr />
   <div class="form">
     <input type="text" v-model="autor.nome" placeholder="Nome" />
-    <input type="text" v-model="autor.email" placeholder="Site" />
+    <input type="text" v-model="autor.email" placeholder="Email" />
     <button @click="salvar">Salvar</button>
     <button @click="limpar">Limpar</button>
   </div>
